@@ -22,13 +22,29 @@ function Profile (){
         })
     }, [ongId]);
 
+    async function handleDeleteIncident(id){
+
+        try {
+            await api.delete(`incidents/${id}`, {
+                headers: {
+                    Authorization: ongId,
+                }
+            });
+            
+            setIncidents(incidents.filter(incidents => incidents.id !== id ));
+
+        } catch (error) {
+            alert(`Error ${error}`)
+        }
+    }
+
     return(
         <div className="profile-container">
             <header>
                 <img src={logoImg} alt="Be The Hero"/>
                 <span>Bem vinda, {ongName}</span>
                 <Link className="button" to="/incidents/new">Cadastrar um novo caso</Link>
-                <button  type="button">
+                <button type="button">
                     <FiPower size={18} color="#E02041" />
                 </button>
             </header>
@@ -44,10 +60,10 @@ function Profile (){
                         <p>{incident.description}</p>
                 
                         <strong>VALOR:</strong>
-                        <p>{incident.value}</p>
+                        <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
                 
                         <button type="button">
-                            <FiTrash2 size={20} color="#a8a8b3" />
+                            <FiTrash2 onClick={ () => handleDeleteIncident(incident.id) } size={20} color="#a8a8b3" />
                         </button>
                     </li>
                 ))}

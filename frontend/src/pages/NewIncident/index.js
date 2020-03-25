@@ -20,7 +20,7 @@ function NewIncident (){
                 <form>
                     <input type="text" placeholder="Título do caso" />
                     <textarea placeholder="Descrição" />
-                    <input type="text" placeholder="Valor em reis" />
+                    <input type="text" placeholder="Valor em reais" />
 
                     <button type="submit" className="button">Cadastrar</button>
                 </form>

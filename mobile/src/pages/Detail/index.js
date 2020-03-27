@@ -13,7 +13,7 @@ export default function Detail(){
     const route = useRoute();
 
     const incident = route.params.incident;
-    const message = 'Olá APAD, estou entrado em contato pois gostaria de ajudar no caso "Cadelinha atropleada" com o valor de R$ 120,00';
+    const message = `Olá ${incident.name}, estou entrado em contato pois gostaria de ajudar no caso "${incident.title}" com o valor de ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}`;
 
     function navigateBack(){
         navigation.goBack();
@@ -21,7 +21,7 @@ export default function Detail(){
 
     function sendMail(){
         MailComposer.composeAsync({
-            subject: 'Herói do caso: Cadelinha atropelada',
+            subject: `Herói do caso: ${incident.title}`,
             recipients: [incident.email],
             body: message,
         })
@@ -43,7 +43,7 @@ export default function Detail(){
 
             <View style={style.incident}>
                     <Text style={[style.incidentProperty, {marginTop: 0}]}>ONG:</Text>
-                    <Text style={style.incidentValue}>{incident.name}</Text>
+    <Text style={style.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
 
                     <Text style={style.incidentProperty}>CASO:</Text>
                     <Text style={style.incidentValue}>{incident.title}</Text>

@@ -20,7 +20,7 @@
 - [React Native](https://reactnative.dev/) 
 
 
-### ⚙️ How it works
+### ⚙️ How It Works
 
 #### Be The Hero aims to connect NGOs with people that want to donate via a mobile app.
 

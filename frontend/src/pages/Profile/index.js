@@ -34,7 +34,7 @@ function Profile (){
             setIncidents(incidents.filter(incidents => incidents.id !== id ));
 
         } catch (error) {
-            alert(`Error ${error}`)
+            alert(`Error ${error}`);
         }
     }
 

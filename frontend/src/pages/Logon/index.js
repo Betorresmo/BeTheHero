@@ -24,7 +24,8 @@ const Logon = ()=>{
             history.push('/profile');
 
         } catch (error) {
-            alert(`Error ${error}`);
+            alert(`${error}
+            Esse ID não existe.`);
         }
     }
 

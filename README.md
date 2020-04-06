@@ -26,5 +26,5 @@
 
 NGO's can create an account in the app as shown in preview and start posting individual cases or general things that help is needed. Then, in the mobile app, anyone can download and see all the cases and NGOs avaliable to help right away; clicking in details and selecting either Whatsapp or E-mail the person can contact the NGO directly.
 
-## [Contact me](https://www.linkedin.com/in/guerrero-roberto/)
+## 📬 [Contact me](https://www.linkedin.com/in/guerrero-roberto/)
 
